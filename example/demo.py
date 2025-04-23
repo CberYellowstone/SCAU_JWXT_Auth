@@ -11,7 +11,7 @@ import time
 
 import requests  # type: ignore
 
-from jwxt import JWXT, REQUEST_TIMEOUT, JWXTLoginError
+from scau_jwxt_auth import JWXT, JWXTLoginError
 
 
 def fetch_user_info(client: JWXT) -> dict:
@@ -33,7 +33,7 @@ def fetch_user_info(client: JWXT) -> dict:
     session.verify = False
     session.cookies.update(client.get_cookies())
     session.headers.update(client.get_headers())
-    response = session.get(url, timeout=REQUEST_TIMEOUT)
+    response = session.get(url, timeout=15)
     response.raise_for_status()
     return response.json()
 

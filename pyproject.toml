@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scau_jwxt_auth"
+version = "0.1.0" # 初始版本号
+authors = [
+  { name="CBYellowstone", email="administrator@mail.ystone.top" },
+]
+description = "A package for authenticating with SCAU JWXT system."
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "ddddocr>=1.5.6",
+    "requests>=2.32.3",
+    "Pillow>=11.2.0",
+    "playwright>=1.51.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/CberYellowstone/SCAU_JWXT_Auth"
+Issues = "https://github.com/CberYellowstone/SCAU_JWXT_Auth/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
