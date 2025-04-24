@@ -1,5 +1,10 @@
 # SCAU JWXT Auth
 
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/scau-jwxt-auth.svg)](https://pypi.org/project/scau-jwxt-auth/)
+[![PyPI version](https://img.shields.io/pypi/v/scau-jwxt-auth.svg)](https://pypi.org/project/scau-jwxt-auth/)
+[![License](https://img.shields.io/pypi/l/scau-jwxt-auth.svg)](https://github.com/CberYellowstone/SCAU_JWXT_Auth/blob/main/LICENSE)
+[![Build Status](https://github.com/CberYellowstone/SCAU_JWXT_Auth/actions/workflows/python-package.yml/badge.svg)](https://github.com/CberYellowstone/SCAU_JWXT_Auth/actions/workflows/python-package.yml)
+
 用于华南农业大学教务系统（SCAU JWXT）的身份认证库，可以一键获取鉴权所需的 Cookie 和 Headers，全天可用，自动处理夜间需要 VPN 的情况。
 
 ## 安装
