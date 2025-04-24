@@ -29,10 +29,7 @@ def fetch_user_info(client: JWXT) -> dict:
         "apiCode=framework.sign.controller.SignController.asserts&"
         f"t={int(time.time()*1000)}&sf_request_type=ajax"
     )
-    session = requests.Session()
-    session.verify = False
-    session.cookies.update(client.get_cookies())
-    session.headers.update(client.get_headers())
+    session = client.get_session()
     response = session.get(url, timeout=15)
     response.raise_for_status()
     return response.json()

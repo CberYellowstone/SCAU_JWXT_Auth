@@ -48,8 +48,10 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+
 class JWXTLoginError(Exception):
     """教务系统登录错误"""
+
     def __init__(self, message: str, stage: str = "未知阶段"):
         super().__init__(f"[{stage}] {message}")
         self.stage = stage
@@ -375,6 +377,15 @@ class JWXT:
         if not self._headers:
             raise JWXTLoginError("尚未成功登录或登录已失败", stage="获取Headers")
         return self._headers.copy()  # 返回副本
+
+    def get_session(self) -> requests.Session:
+        """获取包含认证信息的 requests.Session"""
+        # 通过已有认证信息（TOKEN 和 Cookie）创建并返回一个配置好的 Session
+        return create_session(
+            self._base_url,
+            extra_headers=self.get_headers(),
+            initial_cookies=self.get_cookies(),
+        )
 
     @property
     def token(self) -> Optional[str]:

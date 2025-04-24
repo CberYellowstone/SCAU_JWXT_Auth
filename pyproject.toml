@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "scau_jwxt_auth"
-version = "0.1.1" # 初始版本号
+version = "0.1.2"
 authors = [
   { name="CBYellowstone", email="administrator@mail.ystone.top" },
 ]
